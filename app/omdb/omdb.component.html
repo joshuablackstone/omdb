@@ -1,0 +1,50 @@
+<div class="row">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label class="control-label col-md-2">Search</label>
+            <div class="col-md-10">
+                <input name="search" type="search" class="form-control" [(ngModel)]="search" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-primary" (click)="searchForm()">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row">
+    <nav aria-label="...">
+  <ul class="pager">
+    <li><button class="btn btn-default" (click)="pagePrev()">Previous</button></li>
+    <li><button class="btn btn-default" (click)="pageNext()">Next</button></li>
+  </ul>
+</nav>
+<div *ngIf="values && values.length > 0">
+    <p>
+        <strong>{{totalResults}}</strong> Results found for: <strong>{{search}}</strong>.
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Poster</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of values">
+                <tr>
+                    <td>{{item.imdbID}}</td>
+                    <td>
+                        <a routerLink="/details/{{item.imdbID}}">{{item.Title}}</a>
+                        </td>
+                    <td><img *ngIf="item.Poster && item.Poster != 'N/A'" [src]="item.Poster" style="height: 150px;" class="img-thumbnail img-responsive img-rounded" /></td>
+                    <td>{{item.Year}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

@@ -1,0 +1,70 @@
+<div *ngIf="model">
+    <div class="row">
+        <div class="jumbotron">
+           <h1>Details : <i>{{model.Title}}</i></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <img *ngIf="model.Poster && model.Poster != 'N/A'" [src]="model.Poster" class="img-responsive img-rounded" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Plot</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Plot}}</p>
+                </div>
+            </div>
+             <div class="form-group">
+                <label class="control-label col-md-2">Language</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Language}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Directed By</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Director}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Written By</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Writer}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Actors</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Actors}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Released</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Released | date:'dd-MMM-yyyy'}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Rated</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Rated}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Year</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Year}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Score</label>
+                <div class="col-md-10">
+                    <p class="form-control-static">{{model.Metascore}}/100</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
